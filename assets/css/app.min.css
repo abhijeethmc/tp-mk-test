@@ -5102,37 +5102,13 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     content: ""; /* Remove divider for the last link */
 }
 
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.request-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #343a40;
-    margin: 0;
-}
-
-.view-all {
-    padding: 0.5rem 1rem;
-    color: #5867c3;
-    background: transparent;
-    border: 1px solid #5867c3;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
+/* Progress */
 .progress-container {
     position: relative;
     padding: 40px 0;
     margin: 0 20px;
 }
 
-/* Progress Line */
 .progress-line {
     position: absolute;
     top: 50%;
@@ -5153,7 +5129,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     transition: width 0.3s ease;
 }
 
-/* Steps Container */
 .steps {
     position: relative;
     display: flex;
@@ -5161,14 +5136,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     z-index: 1;
 }
 
-/* Individual Step */
 .step {
     position: relative;
     text-align: center;
     width: 20%;
 }
 
-/* Step Label */
 .step-label {
     position: absolute;
     top: -40px;
@@ -5204,7 +5177,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     border-top-color: #e9ecef;
 }
 
-/* Step Circle */
 .step-circle {
     width: 36px;
     height: 36px;
@@ -5231,6 +5203,52 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     color: #6c757d;
 }
 
+@media (max-width: 768px) {
+    .progress-container {
+        padding: 20px;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .step {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .step-label {
+        position: static;
+        transform: none;
+        margin-left: 15px;
+        margin-right: auto;
+    }
+
+    .step-circle {
+        margin: 0;
+    }
+
+    .progress-line {
+        top: 0;
+        left: 18px;
+        width: 2px;
+        height: 100%;
+        transform: none;
+    }
+
+    .progress-line-fill {
+        width: 2px;
+        height: 50%;
+    }
+
+    .step-label::after {
+        display: none;
+    }
+}
+
 .action-buttons {
     display: flex;
     gap: 1rem;
@@ -5247,47 +5265,4 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .step-label {
-        font-size: 12px;
-        padding: 4px 12px;
-    }
-
-    .step-circle {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-    }
-
-    .progress-container {
-        padding: 30px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .progress-header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .step-label {
-        font-size: 11px;
-        padding: 3px 10px;
-    }
-
-    .step-circle {
-        width: 24px;
-        height: 24px;
-        font-size: 12px;
-    }
-
-    .progress-container {
-        margin: 0 10px;
-    }
 }
